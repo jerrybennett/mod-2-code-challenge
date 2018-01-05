@@ -1,0 +1,11 @@
+<%= form_for @appearance do |f| %>
+
+  <%= f.collection_select :guest_id, Guest.order(:name),:id,:name, prompt: true %>
+
+  <%= f.collection_select :episode_id, Episode.order(:number),:id,:number, prompt: true %>
+
+  <%= f.label :rating %>:
+  <%= f.text_field :rating %><br />
+
+  <%= f.submit %>
+<% end %>
